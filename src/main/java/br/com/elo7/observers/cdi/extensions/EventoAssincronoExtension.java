@@ -25,9 +25,6 @@ public class EventoAssincronoExtension implements Extension {
 			AnnotatedMethod<?> annotatedMethod = methodInjectionPoint.getAnnotated();
 			Method method = annotatedMethod.getJavaMember();
 			
-			System.out.println( method );
-			System.out.println( method.isAnnotationPresent( Assincrono.class ) );
-			
 			if( method.isAnnotationPresent( Assincrono.class ) ){
 				beanManagerImpl.getObservers().remove( observerMethod );
 				event.addObserverMethod(new ObserverMethodWrapper<>( observerMethod ) );
